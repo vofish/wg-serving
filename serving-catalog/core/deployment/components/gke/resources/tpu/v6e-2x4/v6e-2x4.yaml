@@ -6,11 +6,12 @@ spec:
   template:
     spec:
       nodeSelector:
-        cloud.google.com/gke-accelerator: nvidia-h100-80gb
+        cloud.google.com/gke-tpu-topology: 2x4
+        cloud.google.com/gke-tpu-accelerator: tpu-v6e-slice
       containers:
       - name: inference-server
         resources:
           requests:
-            nvidia.com/gpu: 1
+            google.com/tpu: 8
           limits:
-            nvidia.com/gpu: 1
+            google.com/tpu: 8
