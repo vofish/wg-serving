@@ -1,12 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: '*'
+  name: ignored-here
 spec:
   template:
     spec:
       nodeSelector:
-        eks.amazonaws.com/accelerator: nvidia-l4
+        $patch: replace
+        eks.amazonaws.com/compute-type: auto
       containers:
       - name: inference-server
         resources:
@@ -14,3 +15,6 @@ spec:
             nvidia.com/gpu: 1
           limits:
             nvidia.com/gpu: 1
+        env:
+          - name: TENSOR_PARALLEL_SIZE
+            value: "1"
