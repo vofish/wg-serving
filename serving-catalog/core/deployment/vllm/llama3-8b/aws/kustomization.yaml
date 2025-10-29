@@ -18,3 +18,14 @@ patches:
     path: hpa.patch.yaml
     target:
       kind: HorizontalPodAutoscaler
+  - target:
+      group: apps
+      version: v1
+      kind: Deployment
+    patch: |-
+      - op: remove
+        path: /spec/template/spec/nodeSelector
+      - op: add
+        path: /spec/template/spec/nodeSelector
+        value:
+          eks.amazonaws.com/compute-type: auto
