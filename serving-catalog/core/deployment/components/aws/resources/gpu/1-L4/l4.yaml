@@ -6,7 +6,6 @@ spec:
   template:
     spec:
       nodeSelector:
-        # $patch: replace
         eks.amazonaws.com/compute-type: auto
       containers:
       - name: inference-server
