@@ -5,6 +5,8 @@ metadata:
 spec:
   template:
     spec:
+      nodeSelector:
+        karpenter.azure.com/sku-gpu-name: H100
       tolerations:
         - key: "nvidia.com/gpu"
           operator: Exists
