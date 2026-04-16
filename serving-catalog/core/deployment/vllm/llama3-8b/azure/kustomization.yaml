@@ -7,6 +7,9 @@ resources:
 
 components:
   - ../../../components/azure/resources/gpu/1-H100
+  - ../../../components/azure/resources/spot
+  - ../../../components/storage/vllm/azure/blobfuse
+  - ../../../components/storage/vllm/azure/xla-cache
   # - ../../../components/hpa/vllm/token-latency # HPA is a work-in-progress
 
 patches:
