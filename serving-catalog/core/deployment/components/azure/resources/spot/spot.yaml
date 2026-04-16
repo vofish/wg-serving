@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: '*'
+spec:
+  template:
+    spec:
+      nodeSelector:
+        kubernetes.azure.com/scalesetpriority: spot
+      tolerations:
+      - key: kubernetes.azure.com/scalesetpriority
+        operator: Equal
+        value: spot
+        effect: NoSchedule
+      # Required when GPU nodes are tainted with nvidia.com/gpu (see 1-H100 component).
+      - key: nvidia.com/gpu
+        operator: Exists
+        effect: NoSchedule
