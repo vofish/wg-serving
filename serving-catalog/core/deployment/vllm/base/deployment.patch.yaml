@@ -23,6 +23,7 @@ spec:
         args:
         - --model=$(MODEL_ID)
         - --tensor-parallel-size=$(TENSOR_PARALLEL_SIZE)
+        - --max-model-len=8192
         env:
         - name: HUGGING_FACE_HUB_TOKEN
           valueFrom:
