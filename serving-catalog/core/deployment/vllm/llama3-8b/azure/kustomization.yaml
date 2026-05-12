@@ -32,16 +32,16 @@ patches:
         path: /spec/template/spec/containers/0/env
         value:
           - name: MODEL_PATH
-            # value: vllm_models/llama3-8b-hf
+            value: vllm_models/llama3-8b-hf
           - name: VLLM_XLA_CACHE_PATH
-            # value: /data/models
+            value: /data/models
           - name: VLLM_CACHE_ROOT
-            # value: /data
+            value: /data
           - name: VLLM_USE_V1
-            # value: "1"
+            value: "1"
           - name: MODEL_ID
-            # value: meta-llama/Meta-Llama-3-8B
+            value: meta-llama/Meta-Llama-3-8B
           - name: TENSOR_PARALLEL_SIZE
-            # value: "1"
+            value: "1"
     target:
       kind: Deployment
