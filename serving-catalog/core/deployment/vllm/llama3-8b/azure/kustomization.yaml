@@ -27,7 +27,7 @@ patches:
       - op: replace
         path: /spec/template/spec/containers/0/args
         value:
-          - /data/models/$(MODEL_PATH)
+          - --model=/data/models/$(MODEL_PATH)
           - --served-model-name=$(MODEL_ID)
           - --tensor-parallel-size=$(TENSOR_PARALLEL_SIZE)
       - op: replace
