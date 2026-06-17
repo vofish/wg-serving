@@ -1,0 +1,11 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: '*'
+spec:
+  template:
+    metadata:
+      labels:
+        ai.aws.io/model: tinyllama-1b
+        ai.aws.io/inference-server: vllm
+        examples.ai.aws.io/source: blueprints
